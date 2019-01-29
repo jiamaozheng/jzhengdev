@@ -52,11 +52,27 @@ view: meeting {
   dimension: main_type {
     type: string
     sql: ${TABLE}.main_type ;;
+    html:
+      {% if value == 'Execution' %}
+          ✅
+      {% elsif value == 'Leadership' %}
+          ☑️
+      {% else %}
+          ❎
+      {% endif %}
+    ;;
   }
 
   dimension: meeting_status {
     type: string
     sql: ${TABLE}.meeting_status ;;
+    html:
+    {% if value == 'live' %}
+        <p><img src="http://findicons.com/files/icons/573/must_have/48/check.png" height=20 width=20>
+    {% else %}
+        <p><img src="http://findicons.com/files/icons/719/crystal_clear_actions/64/cancel.png" height=20 width=20>
+    {% endif %}
+    ;;
   }
 
   dimension: name {
@@ -82,6 +98,15 @@ view: meeting {
   dimension: suggested_time_minutes {
     type: number
     sql: ${TABLE}.suggested_time_minutes ;;
+    html:
+      {% if value <= 20 %}
+        <div style="background-color: rgba(200,135,25,{{value}}); font-size:150%; text-align:center"><a href="{{ link }}" style="color: white" target="_new">{{ value }} </a></div>
+      {% elsif value > 20 and value < 40 %}
+        <div style="background-color: rgba(25,135,150,{{value}}); font-size:150%; text-align:center"><a href="{{ link }}" style="color: white" target="_new">{{ value }} </a></div>
+      {% else %}
+        <div style="background-color: rgba(25,135,150,0.99); font-size:150%; text-align:center"><a href="{{ link }}"style="color: white" target="_new">{{ value }} </a></div>
+      {% endif %}
+      ;;
   }
 
   dimension: time_budgeted {
