@@ -1,5 +1,5 @@
 view: meeting {
-  sql_table_name: "analytics-jzhengdev-us-east-1".meeting
+  sql_table_name: "analytics-{{ _user_attributes['env'] }}-us-east-1".meeting
     ;;
   suggestions: no
 
