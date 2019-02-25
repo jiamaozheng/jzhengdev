@@ -40,7 +40,7 @@ view: meeting {
     html:
     {% if value == 'Yes' %}
     <div style="text-align:center">
-    <span style="height: 8px; width: 8px; background-color: #00008B; border-radius: 50%; display: inline-block;"> </span>
+      <span style="height: 8px; width: 8px; background-color: #00008B; border-radius: 50%; display: inline-block;"> </span>
     </div>
     {% endif %}
     ;;

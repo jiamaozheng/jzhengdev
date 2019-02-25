@@ -98,8 +98,9 @@ view: company_info {
     type: number
     sql: ${TABLE}.versionnumber ;;
     html:
-    <div style="text-align:center">
-    <span style="height: 8px; width: 8px; background-color: #00008B; border-radius: 50%; display: inline-block;"> </span>
+
+    <div style="text-align:center; width:150px">
+    <span style="height: 8px; width: 8px; background-color: #f2f5f5; border-radius: 50%; display: inline-block;"> </span>
     </div>
     ;;
   }
